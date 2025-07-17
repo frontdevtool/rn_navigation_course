@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo_ui_navigation",
-    "slug": "expo_ui_navigation",
+    "name": "rn_navigation_course",
+    "slug": "rn_navigation_course",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

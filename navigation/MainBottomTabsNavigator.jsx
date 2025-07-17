@@ -9,16 +9,41 @@ import MainStackNavigator from "./MainStackNavigator";
 import MainTopTabNavigator from "./MainTopTabNavigator";
 import Feed from "@/screens/tabScreens/Feed";
 import Ionicons from '@expo/vector-icons/Ionicons';
+
 const MainBottomTabsNavigator = () => {
+  
+  
   const Tab = createBottomTabNavigator();
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+         screenOptions={{
+        tabBarStyle: {
+          height: 50, // Change this value to your desired height
+          paddingBottom: 10,
+          paddingTop: 10,
+          // backgroundColor: 'red'
+          
+        },
+           headerStyle: {
+          height: 60, // Custom height of the top header
+          backgroundColor: 'green',
+          // marginBottom : 20
+        },
+        headerTitleStyle: {
+          fontSize: 22,
+          // backgroundColor : 'red',
+          // marginBottom: 10, // Optional tweak to center title
+          height :50
+        },
+        tabBarLabelPosition :'beside-icon'
+      }}
+    >
       <Tab.Screen
-        name="MainStackNavigator"
-        component={MainStackNavigator}
+        name="feed"
+        component={Feed}
         options={{
           tabBarLabel :'feed',
-          headerShown : false ,
+          // headerShown : false ,
           tabBarIcon: ({ color , focused}) => (
             <Ionicons name="home" size={24} color={color} />
           ),
