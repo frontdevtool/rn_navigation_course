@@ -8,7 +8,7 @@ const Drawer = createDrawerNavigator();
 
 export default function MainDrawerNavigator() {
   return (
-    <Drawer.Navigator screenOptions={{headerShown : false}}>
+    <Drawer.Navigator screenOptions={{headerShown : false}} >
       <Drawer.Screen name="MainStackNavigator" component={MainStackNavigator} />
       <Drawer.Screen name="profile" component={ProfileScreen} options={{headerShown : true}}/>
    

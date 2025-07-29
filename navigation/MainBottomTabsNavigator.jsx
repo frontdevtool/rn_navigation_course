@@ -9,8 +9,9 @@ import MainStackNavigator from "./MainStackNavigator";
 import MainTopTabNavigator from "./MainTopTabNavigator";
 import Feed from "@/screens/tabScreens/Feed";
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { Pressable , Image } from "react-native";
 
-const MainBottomTabsNavigator = () => {
+const MainBottomTabsNavigator = ({navigation}) => {
   
   
   const Tab = createBottomTabNavigator();
@@ -35,19 +36,28 @@ const MainBottomTabsNavigator = () => {
           // marginBottom: 10, // Optional tweak to center title
           height :50
         },
-        tabBarLabelPosition :'beside-icon'
+        tabBarLabelPosition :'beside-icon',
+         headerLeft: () => (
+                <Pressable onPress={() => navigation.openDrawer()}>
+                  <Image
+                    source={require("../assets/images/favicon.png")}
+                    style={{ width: 40, height: 40, borderRadius: 100, marginLeft: 15 }}
+                  />
+                </Pressable>
+              ),
       }}
     >
       <Tab.Screen
         name="feed"
-        component={Feed}
+        component={MainTopTabNavigator}
         options={{
           tabBarLabel :'feed',
           // headerShown : false ,
           tabBarIcon: ({ color , focused}) => (
             <Ionicons name="home" size={24} color={color} />
           ),
-          tabBarActiveTintColor : 'red'
+          tabBarActiveTintColor : 'red',
+          headerTitleAlign : 'center'
         }}
       />
       <Tab.Screen

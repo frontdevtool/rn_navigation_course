@@ -26,6 +26,7 @@ export default function Feed() {
           />
         </Pressable>
       ),
+      headerRight:()=><Button title="click"  onPress={() => navigation.openDrawer()}/>
     });
   }, []);
 

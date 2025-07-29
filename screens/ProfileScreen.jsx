@@ -1,18 +1,24 @@
 import { useNavigation, useRoute } from '@react-navigation/native';
 import React from 'react';
-import { View, Text } from 'react-native';
-import { Button } from 'react-native-paper';
+import { View, Text,Button } from 'react-native';
+import useCounterStore from '../store/store.js'
 
 export default function ProfileScreen() {
    const navigation = useNavigation();
-const route =  useRoute()
+     const count = useCounterStore((state) => state.count)
+     const myName = useCounterStore((state) => state.myName)
+  const increase = useCounterStore((state) => state.increase)
+  const decrease = useCounterStore((state) => state.decrease)
+
   return (
     <View className='flex-1 justify-center items-center'>
       <Text className='text-4xl'> Profile Screen</Text>
-      {/* <Text> name : {route.params.name}</Text>
-       <Button mode="contained" onPress={() => navigation.navigate("settings")} >
-        Go to settings
-      </Button> */}
+  {/* <Button title="Increase" onPress={increase} /> */}
+  <Button title="Increase" onPress={useCounterStore((state) => state.increase)} />
+      <Button title="Decrease" onPress={decrease} />
+      <Button title="set name" onPress={useCounterStore((state)=>state.setName)} />
+      <Text style={{ fontSize: 24 }}>Count: {count}</Text>
+      <Text style={{ fontSize: 24 }}>myName: {myName}</Text>
     </View>
   );
 }

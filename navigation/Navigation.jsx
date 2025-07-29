@@ -6,7 +6,7 @@ import MainStackNavigator from './MainStackNavigator'
 import MainDrawerNavigator from './MainDrawerNavigator'
 
 export default function Navigation() {
-  return  <MainDrawerNavigator/>
+  return  <MainDrawerNavigator />
     // <View>
       {/* <Feed/> */}
      

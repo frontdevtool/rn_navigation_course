@@ -10,13 +10,14 @@ import MainStackNavigator from "@/navigation/MainStackNavigator";
 import MainDrawerNavigator from "@/navigation/MainDrawerNavigator";
 import MainTopTabNavigator from "@/navigation/MainTopTabNavigator";
 import Navigation from "@/navigation/Navigation";
+
 const index = () => {
   return (
   
   
   <>
-    <StatusBar />  
-    <Navigation/>
+    <StatusBar  />  
+    <Navigation />
 
   </>
    
